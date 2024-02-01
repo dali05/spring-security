@@ -2,6 +2,7 @@ package com.example.security.security.authentication;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,12 +10,12 @@ import org.springframework.security.core.GrantedAuthority;
 import javax.security.auth.Subject;
 import java.util.Collection;
 
-@AllArgsConstructor
-@Setter
+@RequiredArgsConstructor
 @Getter
-public class CustomAuthentication implements Authentication {
+@Setter
+public class ApiKeyAuthentication implements Authentication {
 
-    private final boolean authentication;
+    private boolean authentication;
     private final String key;
 
     @Override
