@@ -18,10 +18,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         CustomAuthentication ca = (CustomAuthentication) authentication;
 
         String headerKey = ca.getKey();
-       // if (key.equals(headerKey)) {
+       if (key.equals(headerKey)) {
             CustomAuthentication result = new CustomAuthentication(true, null);
             return result;
-        //}
+        }
+
+       throw new BadCredentialsException("authentication failed");
 
     }
 
